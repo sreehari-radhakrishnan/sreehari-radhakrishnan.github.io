@@ -1,0 +1,265 @@
+/* --- Base Styles --- */
+:root {
+    --bg-color: #0a0a0a;
+    --text-color: #f5f5f5;
+    --accent-color: #666;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    scroll-behavior: smooth;
+}
+
+/* --- Top Navigation / Social --- */
+.top-nav {
+    position: absolute;
+    top: 40px;
+    right: 5%; /* Aligns with the 5% padding of your portfolio section */
+    z-index: 10; /* Ensures it sits on top of the hero overlay */
+}
+
+.social-link {
+    color: var(--text-color);
+    display: inline-block;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    opacity: 0.8;
+}
+
+.social-link:hover {
+    transform: scale(1.1);
+    opacity: 1;
+}
+
+/* Ensure the SVG scales correctly */
+.social-link svg {
+    display: block;
+}
+
+/* --- Hero Section --- */
+.hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-image: url('../images/hero-bg.jpg'); /* ADD YOUR IMAGE HERE */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0, 0, 0, 0.6); /* Darkens the image for text readability */
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    padding: 20px;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    letter-spacing: -1px;
+}
+
+.bio {
+    font-size: 1.2rem;
+    font-weight: 300;
+    line-height: 1.6;
+    color: #ccc;
+    margin-bottom: 2.5rem;
+}
+
+.scroll-btn {
+    display: inline-block;
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border: 1px solid var(--text-color);
+    padding: 12px 24px;
+    transition: all 0.3s ease;
+}
+
+.scroll-btn:hover {
+    background: var(--text-color);
+    color: var(--bg-color);
+}
+
+/* --- Portfolio Section --- */
+.portfolio-section {
+    padding: 100px 5%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.portfolio-section h2 {
+    font-size: 2rem;
+    margin-bottom: 3rem;
+    text-align: center;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+/* Responsive Grid */
+.video-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 4rem;
+}
+
+@media (min-width: 768px) {
+    .video-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 3rem;
+    }
+}
+
+/* --- Unified Video Player Wrapper --- */
+.video-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.video-wrapper {
+    position: relative;
+    width: 100%;
+    /* This forces a perfect 16:9 cinematic aspect ratio on all players */
+    aspect-ratio: 16 / 9; 
+    background-color: #000;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.work-info {
+    padding-top: 1.5rem;
+}
+
+.work-info h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.work-info p {
+    font-size: 0.95rem;
+    color: var(--accent-color);
+    line-height: 1.5;
+}
+
+/* --- Contact Section --- */
+.contact-section {
+    padding: 100px 5%;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.contact-section h2 {
+    font-size: 2rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
+    letter-spacing: 1px;
+}
+
+.contact-section p {
+    color: var(--accent-color);
+    margin-bottom: 3rem;
+    font-size: 1.1rem;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 18px;
+    background-color: #111; /* Slightly lighter than the black background */
+    border: 1px solid #333;
+    color: var(--text-color);
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    border-radius: 4px;
+    transition: border-color 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: var(--text-color); /* Highlights white when typing */
+}
+
+.submit-btn {
+    background: transparent;
+    color: var(--text-color);
+    border: 1px solid var(--text-color);
+    padding: 15px 30px;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+}
+
+.submit-btn:hover {
+    background: var(--text-color);
+    color: var(--bg-color);
+}
+
+.direct-contact {
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid #333;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem; /* Adds a clean space between email and phone */
+    font-size: 1.1rem;
+}
+
+.direct-contact p {
+    margin-bottom: 0; /* Removes default paragraph margin */
+}
+
+.direct-contact a {
+    color: var(--text-color);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-bottom 0.3s ease;
+    margin-left: 0.5rem;
+}
+
+.direct-contact a:hover {
+    border-bottom: 1px solid var(--text-color);
+}
