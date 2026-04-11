@@ -1,24 +1,29 @@
 - title: "Showreel"
   description: "Combination of my works"
   video_type: "gdrive"
-  video_id: "1lfthihBbWUen630Uc7PHHF_k_kkSEjFv" # Replace with your actual YouTube video ID
+  video_id: "1lfthihBbWUen630Uc7PHHF_k_kkSEjFv"
+  thumbnail: "assets/images/thumb-death.jpg"
 
 - title: "Baburoa In Love With Ella"
   description: "Shortfilm | Marathi"
   video_type: "gdrive"
   video_id: "1Bpva0PBTGv0zGnVvvQYul4Azkpy5ft5z" # Replace with your actual Vimeo video ID
+  thumbnail: "assets/images/thumb-death.jpg"
 
 - title: "Dine Kharabele"
   description: "Shortfilm | Odia"
   video_type: "gdrive"
   video_id: "14XD5321KKwGzVZ5C1gKO-yFFUdj1O6-4" # Replace with your Google Drive File ID
+  thumbnail: "assets/images/thumb-death.jpg"
 
 - title: "Yayati Katha"
   description: "Shortfilm | Hindi | Official Selection - 2024 Bangalore International Film Festival"
   video_type: "youtube"
   video_id: "fLdtErsmBjg"
+  thumbnail: "assets/images/thumb-death.jpg"
 
 - title: "Jag Darshan Ka Mela | Murshidabadi | Kaushik-Guddu"
   description: "Music video | Oriyon Music By Arijit Singh"
   video_type: "youtube"
   video_id: "oNhiV_jTo0U"
+  thumbnail: "assets/images/thumb-death.jpg"

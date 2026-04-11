@@ -12,8 +12,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
+
     <nav class="top-nav">
-        <a href="https://instagram.com/etcetera.__" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Instagram">
+        <a href="https://instagram.com/YOUR_USERNAME" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Instagram">
             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="url(#ig-gradient)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <defs>
                     <linearGradient id="ig-gradient" x1="0%" y1="100%" x2="100%" y2="0%">
@@ -30,12 +31,13 @@
             </svg>
         </a>
     </nav>
+
     <header class="hero">
         <div class="hero-overlay"></div>
         <div class="hero-content">
-            <h1>Sreehari Radhakrishnan</h1>
+            <h1>{{ site.title }}</h1>
             <p class="bio">
-                Cinematographer based in Kerala. A graduate of the prestigious Satyajit Ray Film and Television Institute, I bring a strong foundation in both technical expertise and artistic vision to every project I undertake.
+                {{ site.description }}
             </p>
             <a href="#portfolio" class="scroll-btn">View Works ↓</a>
         </div>
@@ -45,17 +47,14 @@
         <h2>Selected Works</h2>
         <div class="video-grid">
             {% for work in site.data.works %}
-            <div class="video-card">
-                <div class="video-wrapper">
-                    {% if work.video_type == 'youtube' %}
-                    <iframe src="https://www.youtube.com/embed/{{ work.video_id }}?modestbranding=1&rel=0" frameborder="0" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>
-                    
-                    {% elsif work.video_type == 'vimeo' %}
-                    <iframe src="https://player.vimeo.com/video/{{ work.video_id }}?color=ffffff&title=0&byline=0&portrait=0" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
-                    
-                    {% elsif work.video_type == 'gdrive' %}
-                    <iframe src="https://drive.google.com/file/d/{{ work.video_id }}/preview" frameborder="0" allow="autoplay" allowfullscreen></iframe>
-                    {% endif %}
+            <div class="video-card" data-type="{{ work.video_type }}" data-id="{{ work.video_id }}">
+                <div class="thumbnail-wrapper">
+                    <img src="{{ work.thumbnail | relative_url }}" alt="{{ work.title }} thumbnail">
+                    <div class="play-overlay">
+                        <svg viewBox="0 0 24 24" fill="currentColor" class="play-icon">
+                            <path d="M8 5v14l11-7z"/>
+                        </svg>
+                    </div>
                 </div>
                 <div class="work-info">
                     <h3>{{ work.title }}</h3>
@@ -79,14 +78,62 @@
 
         <div class="direct-contact">
             <p>Email: <a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
-            <p>Phone: <a href="tel:+917034725989">{{ site.phone }}</a></p>
+            <p>Phone: <a href="tel:+917034725989">+91 (703) 472-5989</a></p>
         </div>
     </section>
 
+    <div id="videoModal" class="modal">
+        <div class="modal-content">
+            <button class="close-modal">&times;</button>
+            <div class="modal-video-wrapper" id="modalVideoContainer">
+                </div>
+        </div>
+    </div>
+
     <script>
+        // Smooth Scrolling
         document.querySelector('.scroll-btn').addEventListener('click', function(e) {
             e.preventDefault();
             document.querySelector('#portfolio').scrollIntoView({ behavior: 'smooth' });
+        });
+
+        // Video Modal Logic
+        const modal = document.getElementById('videoModal');
+        const modalContainer = document.getElementById('modalVideoContainer');
+        const closeBtn = document.querySelector('.close-modal');
+        const cards = document.querySelectorAll('.video-card');
+
+        // Open modal and load video
+        cards.forEach(card => {
+            card.addEventListener('click', () => {
+                const type = card.getAttribute('data-type');
+                const id = card.getAttribute('data-id');
+                let iframeSrc = '';
+
+                if (type === 'youtube') {
+                    iframeSrc = `https://www.youtube.com/embed/${id}?autoplay=1&modestbranding=1&rel=0`;
+                } else if (type === 'vimeo') {
+                    iframeSrc = `https://player.vimeo.com/video/${id}?autoplay=1&color=d4af37&title=0&byline=0&portrait=0`;
+                } else if (type === 'gdrive') {
+                    iframeSrc = `https://drive.google.com/file/d/${id}/preview`;
+                }
+
+                modalContainer.innerHTML = `<iframe src="${iframeSrc}" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>`;
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden'; // Prevent background scrolling
+            });
+        });
+
+        // Close modal and destroy iframe (stops audio)
+        function closeModal() {
+            modal.classList.remove('active');
+            modalContainer.innerHTML = ''; 
+            document.body.style.overflow = 'auto'; // Restore scrolling
+        }
+
+        closeBtn.addEventListener('click', closeModal);
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) closeModal(); // Close if clicking outside the video
         });
     </script>
 </body>
