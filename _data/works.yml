@@ -1,20 +1,20 @@
 - title: "Showreel"
   description: "Combination of my works"
   video_type: "gdrive"
-  video_id: "1lfthihBbWUen630Uc7PHHF_k_kkSEjFv"
-  thumbnail: "assets/images/thumb-death.jpg"
+  video_id: "1lJid8vzkCtt2OXnaCLdcI7T05wXa2fHt"
+  thumbnail: "assets/images/showreel.jpg"
 
 - title: "Baburoa In Love With Ella"
   description: "Shortfilm | Marathi"
   video_type: "gdrive"
-  video_id: "1Bpva0PBTGv0zGnVvvQYul4Azkpy5ft5z" # Replace with your actual Vimeo video ID
+  video_id: "1Bpva0PBTGv0zGnVvvQYul4Azkpy5ft5z"
   thumbnail: "assets/images/thumb-death.jpg"
 
 - title: "Dine Kharabele"
   description: "Shortfilm | Odia"
   video_type: "gdrive"
-  video_id: "14XD5321KKwGzVZ5C1gKO-yFFUdj1O6-4" # Replace with your Google Drive File ID
-  thumbnail: "assets/images/thumb-death.jpg"
+  video_id: "1q660HyUaIY5qUNbdNteLxYHmRd9k4uKf/view?usp=drive_link"
+  thumbnail: "assets/images/dine kharebele.jpg"
 
 - title: "Yayati Katha"
   description: "Shortfilm | Hindi | Official Selection - 2024 Bangalore International Film Festival"
