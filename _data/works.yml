@@ -26,3 +26,9 @@
   description: "Music video | Oriyon Music By Arijit Singh"
   video_type: "youtube"
   video_id: "oNhiV_jTo0U"
+
+- title: "Chavukalyanam | Celebration of death | IFFK 2025"
+  description: "Malayalam feature premiered at 30th IFFK"
+  video_type: "youtube"
+  video_id: "6MrenyjAUDc"
+  thumbnail: "assets/images/chavukalyanam.png"
