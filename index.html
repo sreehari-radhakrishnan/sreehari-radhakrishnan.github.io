@@ -49,7 +49,16 @@
             {% for work in site.data.works %}
             <div class="video-card" data-type="{{ work.video_type }}" data-id="{{ work.video_id }}">
                 <div class="thumbnail-wrapper">
-                    <img src="{{ work.thumbnail | relative_url }}" alt="{{ work.title }} thumbnail">
+                    {% if work.thumbnail %}
+                        <img src="{{ work.thumbnail | relative_url }}" alt="{{ work.title }} thumbnail">
+                    
+                    {% elsif work.video_type == 'youtube' %}
+                        <img src="https://img.youtube.com/vi/{{ work.video_id }}/maxresdefault.jpg" alt="{{ work.title }} thumbnail">
+                    
+                    {% else %}
+                        <img src="{{ '/assets/images/default-thumbnail.jpg' | relative_url }}" alt="{{ work.title }} thumbnail">
+                    {% endif %}
+                    
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor" class="play-icon">
                             <path d="M8 5v14l11-7z"/>
