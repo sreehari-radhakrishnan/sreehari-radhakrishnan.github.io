@@ -437,6 +437,8 @@ body, html {
     background-position: center;
     /* Removed the buggy 'fixed' attachment and the hardcoded URL */
     padding: 100px 5%;
+    /* Tells it to use the desktop image by default */
+    background-image: var(--desktop-bg);
 }
 
 .about-overlay {
@@ -539,13 +541,16 @@ body, html {
     }
     /* --- Mobile About & Contact Layout --- */
     .about-section {
-        position: relative; /* Required to lock the absolute contact box to the bottom */
+        position: relative; 
         min-height: 100vh;
         flex-direction: column; 
         align-items: flex-start; 
         padding-top: 100px;      
-        padding-bottom: 120px; /* Crucial: Prevents the centered text from overlapping the bottom links */
-        background-position: right center !important; 
+        padding-bottom: 120px; 
+        background-position: center !important; /* Changed to 'center' since your custom mobile photo is likely already framed perfectly */
+        
+        /* Swaps to the vertical mobile photo! */
+        background-image: var(--mobile-bg) !important; 
     }
 
     /* Flawlessly centers the text vertically in the remaining space */
