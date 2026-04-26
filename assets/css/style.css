@@ -333,13 +333,12 @@ body, html {
 /* --- About Section --- */
 .about-section {
     position: relative;
-    min-height: 100vh; /* Forces it to be full screen */
+    min-height: 100vh; 
     display: flex;
-    align-items: center; /* Vertically centers the text */
-    background-image: url('../images/about-bg.jpg'); /* Make sure this image is in your folder! */
+    align-items: center; 
     background-size: cover;
     background-position: center;
-    background-attachment: fixed; /* Creates a high-end parallax scroll effect */
+    /* Removed the buggy 'fixed' attachment and the hardcoded URL */
     padding: 100px 5%;
 }
 
