@@ -95,17 +95,20 @@
             {% endfor %}
         </div>
     </main>
-
-    <section id="about" class="about-section" style="background-image: url('{{ "/assets/images/about-bg2.jpg" | relative_url }}');">
+    <section id="about" class="about-section" style="background-image: url('{{ '/assets/images/about-bg2.jpg' | relative_url }}');">
         <div class="about-overlay"></div>
         <div class="about-content">
-            <p>
+             <p>
               {{site.description}}
             </p>
-        </div>
-        <div class="about-contact">
-            <a href="mailto:{{ site.email }}">{{ site.email }}</a>
-            <a href="tel:+917034725989">+91 (703) 472-5989</a>
+            <div class="contact-card">
+                <h3 class="contact-title">Connect</h3>
+                <div class="contact-links">
+                    <a href="mailto:{{ site.email }}" class="contact-link">Email</a>
+                    <a href="tel:+917034725989" class="contact-link">+91 (703) 472-5989</a>
+                    <a href="https://instagram.com/hridhyaraveendran.p" target="_blank" rel="noopener noreferrer" class="contact-link">Instagram</a>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -139,10 +142,12 @@
         const closeMobileMenu = document.querySelector('.close-mobile-menu');
         const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
 
-        function toggleMobileMenu() {
+       function toggleMobileMenu() {
             mobileMenu.classList.toggle('active');
+            hamburger.classList.toggle('hide-hamburger'); // This hides the icon
+            
             if (mobileMenu.classList.contains('active')) {
-                document.body.style.overflow = 'hidden'; // Prevent scrolling in background
+                document.body.style.overflow = 'hidden'; 
             } else {
                 document.body.style.overflow = 'auto';
             }
