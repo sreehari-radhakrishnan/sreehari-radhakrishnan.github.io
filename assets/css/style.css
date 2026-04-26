@@ -123,29 +123,40 @@ body, html {
     visibility: visible;
 }
 
+/* --- Bulletproof Mobile Close Button --- */
 .close-mobile-menu {
     position: absolute;
-    top: 20px; 
-    right: 2%; 
-    background: transparent;
-    border: none;
-    color: var(--text-color); /* This passes your off-white color to the SVG */
-    cursor: pointer;
-    transition: color 0.3s ease;
-    z-index: 9999;
+    top: 15px; 
+    right: 15px; /* Switched from percentages to hard pixels for stability */
+    background: transparent !important;
+    border: none !important;
+    z-index: 99999; /* Maxed out Z-index */
     
-    /* FIX: Corrected Hitbox Math */
+    /* Strips all hidden Apple/Android OS button styles */
+    -webkit-appearance: none;
+    appearance: none;
+    outline: none;
+    box-shadow: none;
+    
+    /* Perfect Hitbox Math */
     width: 60px;
     height: 60px;
-    padding: 10px; /* Gives the 36px SVG exact room to breathe */
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
     -webkit-tap-highlight-color: transparent; 
 }
 
-.close-mobile-menu:hover {
-    color: var(--accent-color);
+/* Forces the SVG to never collapse */
+.close-mobile-menu svg {
+    display: block;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.close-mobile-menu:hover svg {
+    transform: scale(1.1);
+    opacity: 0.8;
 }
 
 .mobile-menu-links {
