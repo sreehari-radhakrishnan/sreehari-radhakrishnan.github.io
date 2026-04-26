@@ -351,11 +351,10 @@ body, html {
     z-index: 1;
 }
 
-.about-content p {
-    font-size: 1.1rem;
-    line-height: 1.8;
-    color: var(--text-color); /* Changed to your crisp, off-white title color */
-    margin-bottom: 1.5rem;
+.about-content {
+    position: relative;
+    z-index: 2;
+    max-width: 600px; /* Keeps the text contained to the left half of the screen */
 }
 
 .about-content h2 {
@@ -369,7 +368,7 @@ body, html {
 .about-content p {
     font-size: 1.1rem;
     line-height: 1.8;
-    color: var(--text-muted);
+    color: var(--text-color); /* Changed to your crisp, off-white title color */
     margin-bottom: 1.5rem;
 }
 
