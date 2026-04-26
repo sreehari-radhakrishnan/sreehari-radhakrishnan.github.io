@@ -134,6 +134,7 @@ body, html {
     line-height: 1;
     cursor: pointer;
     transition: color 0.3s ease;
+    z-index: 9999; /* FIX: Forces button above the invisible top-nav barrier */
 }
 
 .close-mobile-menu:hover {
@@ -469,6 +470,46 @@ body, html {
     transform: translateY(-2px);
 }
 
+/* --- Bottom-Anchored Contact Row --- */
+.about-contact {
+    position: absolute;
+    bottom: 50px;
+    left: 5%;
+    right: 5%;
+    display: flex;
+    justify-content: space-between; /* Puts text on the left, icon on the right */
+    align-items: center;
+    z-index: 3;
+}
+
+.contact-info {
+    display: flex;
+    gap: 2.5rem;
+}
+
+.about-contact a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.about-contact a:hover {
+    color: var(--accent-color);
+    transform: translateY(-2px);
+}
+
+.social-link {
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    opacity: 0.9;
+}
+
+.social-link:hover {
+    transform: scale(1.1);
+    opacity: 1;
+}
+
 /* --- Mobile View Adjustments --- */
 @media (max-width: 768px) {
     /* Hide desktop links, show hamburger */
@@ -479,10 +520,21 @@ body, html {
         display: block;
     }
 
-    /* Mobile Contact Layout */
-    .contact-links {
+  /* Mobile Contact Layout */
+    .about-contact {
+        position: relative; /* Unpins it from the absolute bottom on short screens */
+        bottom: auto;
+        left: auto;
+        right: auto;
         flex-direction: column;
-        gap: 1.2rem;
+        align-items: flex-start;
+        gap: 1.5rem;
+        margin-top: 4rem; /* Adds breathing room below the bio text */
+    }
+
+    .contact-info {
+        flex-direction: column;
+        gap: 1rem;
     }
     
     .about-section {
