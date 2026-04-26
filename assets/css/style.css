@@ -450,15 +450,10 @@ body, html {
     margin-bottom: 1.5rem;
 }
 
-/* --- About Section Contacts (Bottom Corners) --- */
-.about-contact {
-    position: absolute;
-    bottom: 50px; /* Hovers nicely above the bottom edge */
-    left: 5%;
-    right: 5%;
-    display: flex;
-    justify-content: space-between; /* Pushes one to the far left, the other to the far right */
-    z-index: 3; /* Ensures it sits above the photo and gradient overlay */
+/* Hides the hamburger when the menu is open */
+.hide-hamburger {
+    opacity: 0;
+    pointer-events: none;
 }
 
 .about-contact a {
@@ -484,16 +479,10 @@ body, html {
         display: block;
     }
 
-    /* Fix About Section Contacts for Mobile */
-    .about-contact {
-        position: relative; /* Removes it from the bottom of the screen */
-        bottom: auto;
-        left: auto;
-        right: auto;
+    /* Mobile Contact Layout */
+    .contact-links {
         flex-direction: column;
-        align-items: flex-start; /* Aligns with the bio text */
-        gap: 1rem;
-        margin-top: 3rem; /* Creates clean space between bio text and contacts */
+        gap: 1.2rem;
     }
     
     .about-section {
