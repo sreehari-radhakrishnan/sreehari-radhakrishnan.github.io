@@ -30,8 +30,8 @@ body, html {
     padding: 40px 5% 120px 5%; /* Deep 120px bottom padding creates a long, smooth fade */
     z-index: 9; /* Sits just below the clickable nav links */
     
-    /* Smooth linear gradient fading from top to bottom */
-    background: linear-gradient(to bottom, rgba(13, 19, 26, 0.95) 0%, rgba(13, 19, 26, 0.5) 45%, transparent 100%);
+   /* Changed 'transparent' to an invisible Midnight Blue to stop the bright line glitch */
+    background: linear-gradient(to bottom, rgba(13, 19, 26, 0.95) 0%, rgba(13, 19, 26, 0.6) 50%, rgba(13, 19, 26, 0) 100%);
     pointer-events: none; /* Ensures the invisible gradient doesn't block you from clicking videos later */
 }
 
@@ -351,10 +351,11 @@ body, html {
     z-index: 1;
 }
 
-.about-content {
-    position: relative;
-    z-index: 2;
-    max-width: 600px; /* Keeps the text contained to the left half of the screen */
+.about-content p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-color); /* Changed to your crisp, off-white title color */
+    margin-bottom: 1.5rem;
 }
 
 .about-content h2 {
@@ -372,39 +373,35 @@ body, html {
     margin-bottom: 1.5rem;
 }
 
-/* --- Footer Section --- */
-.site-footer {
-    padding: 60px 5%;
-    text-align: center;
-    border-top: 1px solid var(--border-color); /* Subtle divider line */
-    background-color: var(--bg-color);
-}
-
-.footer-links {
+/* --- About Section Contacts (Bottom Corners) --- */
+.about-contact {
+    position: absolute;
+    bottom: 50px; /* Hovers nicely above the bottom edge */
+    left: 5%;
+    right: 5%;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 3rem; /* Clean spacing between email and phone */
-    flex-wrap: wrap;
+    justify-content: space-between; /* Pushes one to the far left, the other to the far right */
+    z-index: 3; /* Ensures it sits above the photo and gradient overlay */
 }
 
-.footer-links a {
-    color: var(--text-muted);
+.about-contact a {
+    color: var(--text-color);
     text-decoration: none;
     font-size: 1.1rem;
     letter-spacing: 1px;
     transition: color 0.3s ease, transform 0.3s ease;
 }
 
-.footer-links a:hover {
+.about-contact a:hover {
     color: var(--accent-color);
-    transform: translateY(-2px); /* Slight lift effect on hover */
+    transform: translateY(-2px);
 }
 
-/* On very small mobile screens, stack the email and phone */
+/* Stacks them neatly on top of each other for mobile screens */
 @media (max-width: 600px) {
-    .footer-links {
+    .about-contact {
         flex-direction: column;
         gap: 1.5rem;
+        bottom: 30px;
     }
 }
