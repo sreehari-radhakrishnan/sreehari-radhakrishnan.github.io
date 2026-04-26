@@ -21,23 +21,24 @@ body, html {
     scroll-behavior: smooth;
 }
 
-/* --- Branding Header (Top Left) --- */
+/* --- Top Bar Gradient & Branding (Top Left) --- */
 .landing-header {
-    position: fixed;
-    top: 0;    /* Changed to 0 so the gradient touches the exact edge of the screen */
-    left: 0;   /* Changed to 0 */
-    padding: 40px 100px 100px 5%; /* Pushes the text back to its original position */
-    z-index: 10;
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%; /* Stretches the gradient across the entire screen */
+    padding: 40px 5% 120px 5%; /* Deep 120px bottom padding creates a long, smooth fade */
+    z-index: 9; /* Sits just below the clickable nav links */
     
-    /* Creates a smooth, Midnight Blue shadow radiating from the top-left corner */
-    background: radial-gradient(circle at top left, rgba(13, 19, 26, 0.95) 0%, rgba(13, 19, 26, 0.6) 40%, transparent 80%);
-    pointer-events: none; /* Ensures the invisible part of the gradient doesn't block clicks */
+    /* Smooth linear gradient fading from top to bottom */
+    background: linear-gradient(to bottom, rgba(13, 19, 26, 0.95) 0%, rgba(13, 19, 26, 0.5) 45%, transparent 100%);
+    pointer-events: none; /* Ensures the invisible gradient doesn't block you from clicking videos later */
 }
 
 .branding {
     color: var(--text-color);
-    /* Adds a subtle drop shadow to the text itself for an extra layer of protection */
-    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.8);
+    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.8); /* Extra layer of text protection */
+    pointer-events: auto; /* Re-enables clicking on the text if you want to link it later */
 }
 
 .branding .name {
@@ -58,13 +59,13 @@ body, html {
 
 /* --- Top Navigation / Social (Top Right) --- */
 .top-nav {
-    position: fixed;
-    top: 40px;
+    position: fixed; 
+    top: 40px; /* Aligns perfectly with the 40px top padding of the branding */
     right: 5%; 
     z-index: 10; 
     display: flex;
     align-items: center;
-    gap: 2rem; /* Adds clean spacing between text and icon */
+    gap: 2rem; 
 }
 
 .nav-link {
@@ -74,6 +75,7 @@ body, html {
     text-transform: uppercase;
     letter-spacing: 2px;
     transition: color 0.3s ease;
+    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.8); /* Matches the branding shadow */
 }
 
 .nav-link:hover {
