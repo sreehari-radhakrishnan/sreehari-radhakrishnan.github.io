@@ -125,8 +125,10 @@ body, html {
 
 .close-mobile-menu {
     position: absolute;
-    top: 35px;
-    right: 5%;
+    /* Adjusted top and right slightly to keep the visual "X" exactly where it was, 
+       while making room for the new invisible padding boundary */
+    top: 20px; 
+    right: 2%; 
     background: none;
     border: none;
     color: var(--text-color);
@@ -134,7 +136,16 @@ body, html {
     line-height: 1;
     cursor: pointer;
     transition: color 0.3s ease;
-    z-index: 9999; /* FIX: Forces button above the invisible top-nav barrier */
+    z-index: 9999;
+    
+    /* FIX: Expanding the invisible touch area */
+    padding: 20px; 
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    -webkit-tap-highlight-color: transparent; /* Removes the ugly blue tap-flash on iPhones */
 }
 
 .close-mobile-menu:hover {
@@ -520,25 +531,43 @@ body, html {
         display: block;
     }
 
-  /* Mobile Contact Layout */
-    .about-contact {
-        position: relative; /* Unpins it from the absolute bottom on short screens */
-        bottom: auto;
-        left: auto;
-        right: auto;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 1.5rem;
-        margin-top: 4rem; /* Adds breathing room below the bio text */
+ /* Mobile About & Contact Layout */
+    .about-section {
+        align-items: flex-start; 
+        padding-top: 150px; 
+        background-position: right center !important; 
+        flex-direction: column; /* FIX: Forces contact info to drop BELOW the text */
     }
 
-    .contact-info {
+    .about-contact {
+        position: relative; 
+        bottom: auto;
+        left: 0;
+        right: 0;
+        width: 100%; /* Takes full width of the screen */
         flex-direction: column;
-        gap: 1rem;
+        align-items: center; /* Centers the Instagram icon */
+        margin-top: 4rem; 
     }
-    
-    .about-section {
-        align-items: flex-start; /* Pushes content up */
-        padding-top: 150px; /* Leaves room for the header */
+
+    /* Forces the Instagram icon above the email/phone */
+    .about-contact .social-link {
+        order: -1; 
+        margin-bottom: 2.5rem;
+        transform: scale(1.2); /* Makes it slightly larger and easier to tap */
+    }
+
+    /* Pushes email and phone to opposite edges */
+    .contact-info {
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+        gap: 0;
+    }
+
+    /* Shrinks text to prevent overlap on narrow screens */
+    .contact-info a {
+        font-size: 0.85rem; 
+        letter-spacing: 0.5px;
     }
 }
