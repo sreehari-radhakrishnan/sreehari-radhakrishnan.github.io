@@ -23,7 +23,7 @@ body, html {
 
 /* --- Branding Header (Top Left) --- */
 .landing-header {
-    position: absolute;
+    position: fixed;
     top: 0;    /* Changed to 0 so the gradient touches the exact edge of the screen */
     left: 0;   /* Changed to 0 */
     padding: 40px 100px 100px 5%; /* Pushes the text back to its original position */
@@ -58,7 +58,7 @@ body, html {
 
 /* --- Top Navigation / Social (Top Right) --- */
 .top-nav {
-    position: absolute;
+    position: fixed;
     top: 40px;
     right: 5%; 
     z-index: 10; 
