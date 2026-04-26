@@ -12,32 +12,37 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-
+        
+    <header class="hero carousel-container">
+        <div class="carousel-slide grayscale active" style="background-image: url('assets/images/landing1.jpg');"></div>
+        <div class="carousel-slide grayscale" style="background-image: url('assets/images/landing2.jpg');"></div>
+        <div class="carousel-slide grayscale" style="background-image: url('assets/images/landing3.jpg');"></div>
+    </header>
+    
+    <nav class="top-nav">
+        <a href="https://instagram.com/hridhyaraveendran.p" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Instagram">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="url(#ig-gradient)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <defs>
+                    <linearGradient id="ig-gradient" x1="0%" y1="100%" x2="100%" y2="0%">
+                        <stop offset="0%" stop-color="#f09433" />
+                        <stop offset="25%" stop-color="#e6683c" />
+                        <stop offset="50%" stop-color="#dc2743" />
+                        <stop offset="75%" stop-color="#cc2366" />
+                        <stop offset="100%" stop-color="#bc1888" />
+                    </linearGradient>
+                </defs>
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+            </svg>
+        </a>
+    </nav>
     <header class="landing-header">
-    <div class="branding">
-        <span class="name">{{site.title}}</span>
-        <span class="designation">Cinematographer</span>
-    </div>
-</header>
-
-<nav class="top-nav">
-    <a href="https://instagram.com/hridhyaraveendran.p" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Instagram">
-        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="url(#ig-gradient)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <defs>
-                <linearGradient id="ig-gradient" x1="0%" y1="100%" x2="100%" y2="0%">
-                    <stop offset="0%" stop-color="#f09433" />
-                    <stop offset="25%" stop-color="#e6683c" />
-                    <stop offset="50%" stop-color="#dc2743" />
-                    <stop offset="75%" stop-color="#cc2366" />
-                    <stop offset="100%" stop-color="#bc1888" />
-                </linearGradient>
-            </defs>
-            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-        </svg>
-    </a>
-</nav>
+        <div class="branding">
+            <span class="name">{{site.title}}</span>
+            <span class="designation">Cinematographer</span>
+        </div>
+    </header>
 
     <main id="portfolio" class="portfolio-section">
         <h2>Selected Works</h2>
@@ -96,11 +101,20 @@
     </div>
 
     <script>
-        // Smooth Scrolling
-        document.querySelector('.scroll-btn').addEventListener('click', function(e) {
-            e.preventDefault();
-            document.querySelector('#portfolio').scrollIntoView({ behavior: 'smooth' });
-        });
+        // Simple Native JS Carousel Script
+        const slides = document.querySelectorAll('.carousel-slide');
+        let currentSlide = 0;
+        const slideInterval = 5000; // Time per slide in ms (5 seconds)
+    
+        function nextSlide() {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }
+    
+        if (slides.length > 0) {
+            setInterval(nextSlide, slideInterval);
+        }
 
         // Video Modal Logic
         const modal = document.getElementById('videoModal');
