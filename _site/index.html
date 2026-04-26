@@ -30,15 +30,10 @@
         </a>
     </nav>
 
-    <header class="hero">
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <h1>Sreehari Radhakrishnan</h1>
-            <p class="bio">
-                Cinematographer based in Kerala. A graduate of the prestigious Satyajit Ray Film and Television Institute, I bring a strong foundation in both technical expertise and artistic vision to every project I undertake.
-            </p>
-            <a href="#portfolio" class="scroll-btn">View Works ↓</a>
-        </div>
+   <header class="hero carousel-container">
+        <div class="carousel-slide grayscale active" style="background-image: url('assets/images/landing1.jpg');"></div>
+        <div class="carousel-slide grayscale" style="background-image: url('assets/images/landing2.jpg');"></div>
+        <div class="carousel-slide grayscale" style="background-image: url('assets/images/landing3.jpg');"></div>
     </header>
 
     <main id="portfolio" class="portfolio-section">
@@ -149,11 +144,20 @@
     </div>
 
     <script>
-        // Smooth Scrolling
-        document.querySelector('.scroll-btn').addEventListener('click', function(e) {
-            e.preventDefault();
-            document.querySelector('#portfolio').scrollIntoView({ behavior: 'smooth' });
-        });
+        // Simple Native JS Carousel Script
+        const slides = document.querySelectorAll('.carousel-slide');
+        let currentSlide = 0;
+        const slideInterval = 5000; // Time per slide in ms (5 seconds)
+    
+        function nextSlide() {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }
+    
+        if (slides.length > 0) {
+            setInterval(nextSlide, slideInterval);
+        }
 
         // Video Modal Logic
         const modal = document.getElementById('videoModal');
