@@ -61,12 +61,17 @@ body, html {
 /* --- Top Navigation / Social (Top Right) --- */
 .top-nav {
     position: fixed; 
-    top: 40px; /* Aligns perfectly with the 40px top padding of the branding */
+    top: 40px; 
     right: 5%; 
-    z-index: 10; 
+    z-index: 100; /* Kept high so it sits above the mobile menu */
     display: flex;
     align-items: center;
-    gap: 2rem; 
+    gap: 1.5rem; 
+}
+
+.desktop-links {
+    display: flex;
+    gap: 2rem;
 }
 
 .nav-link {
@@ -76,11 +81,84 @@ body, html {
     text-transform: uppercase;
     letter-spacing: 2px;
     transition: color 0.3s ease;
-    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.8); /* Matches the branding shadow */
+    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
 }
 
 .nav-link:hover {
     color: var(--accent-color);
+}
+
+/* Hamburger & Mobile Menu Baseline (Hidden on Desktop) */
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--text-color);
+    cursor: pointer;
+    padding: 0;
+    filter: drop-shadow(0 4px 10px rgba(0,0,0,0.8));
+    transition: color 0.3s ease;
+}
+
+.hamburger:hover {
+    color: var(--accent-color);
+}
+
+.mobile-menu {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100vh;
+    background-color: rgba(13, 19, 26, 0.98); /* Solid Midnight Blue */
+    z-index: 99;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+    backdrop-filter: blur(10px);
+}
+
+.mobile-menu.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.close-mobile-menu {
+    position: absolute;
+    top: 35px;
+    right: 5%;
+    background: none;
+    border: none;
+    color: var(--text-color);
+    font-size: 3rem;
+    line-height: 1;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close-mobile-menu:hover {
+    color: var(--accent-color);
+}
+
+.mobile-menu-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+}
+
+.mobile-nav-link {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.mobile-nav-link:hover {
+    color: var(--accent-color);
+    transform: scale(1.1);
 }
 
 .social-link {
@@ -396,11 +474,30 @@ body, html {
     transform: translateY(-2px);
 }
 
-/* Stacks them neatly on top of each other for mobile screens */
-@media (max-width: 600px) {
+/* --- Mobile View Adjustments --- */
+@media (max-width: 768px) {
+    /* Hide desktop links, show hamburger */
+    .desktop-links {
+        display: none;
+    }
+    .hamburger {
+        display: block;
+    }
+
+    /* Fix About Section Contacts for Mobile */
     .about-contact {
+        position: relative; /* Removes it from the bottom of the screen */
+        bottom: auto;
+        left: auto;
+        right: auto;
         flex-direction: column;
-        gap: 1.5rem;
-        bottom: 30px;
+        align-items: flex-start; /* Aligns with the bio text */
+        gap: 1rem;
+        margin-top: 3rem; /* Creates clean space between bio text and contacts */
+    }
+    
+    .about-section {
+        align-items: flex-start; /* Pushes content up */
+        padding-top: 150px; /* Leaves room for the header */
     }
 }
