@@ -431,6 +431,7 @@ body, html {
 .about-section {
     position: relative;
     min-height: 100vh; 
+    min-height: 100svh;
     display: flex;
     align-items: center; 
     background-size: cover;
@@ -543,6 +544,7 @@ body, html {
     .about-section {
         position: relative; 
         min-height: 100vh;
+        min-height: 100svh; /* FIX: Added here as well for mobile */
         flex-direction: column; 
         align-items: flex-start; 
         padding-top: 100px;      
