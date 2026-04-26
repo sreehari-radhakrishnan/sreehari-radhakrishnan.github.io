@@ -45,7 +45,7 @@ body, html {
     display: block;
     font-weight: 600;
     font-size: 1.5rem;
-    letter-spacing: -0.5px;
+    letter-spacing: 2px; /* Increased slightly to look better in ALL CAPS */
     text-transform: uppercase; /* This forces the text to be ALL CAPS */
 }
 
