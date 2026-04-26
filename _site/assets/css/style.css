@@ -20,7 +20,32 @@ body, html {
     scroll-behavior: smooth;
 }
 
-/* --- Top Navigation / Social --- */
+/* Add to top-nav and new styles section */
+.landing-header {
+    position: absolute;
+    top: 40px;
+    left: 5%;
+    z-index: 10;
+}
+.branding {
+    color: var(--text-color);
+}
+.branding .name {
+    display: block;
+    font-weight: 600;
+    font-size: 1.5rem;
+    letter-spacing: -0.5px;
+}
+.branding .designation {
+    display: block;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 2px;
+}
+
+/* Ensure top-nav coexists */
 .top-nav {
     position: absolute;
     top: 40px;
@@ -52,7 +77,6 @@ body, html {
     align-items: center;
     justify-content: center;
     text-align: center;
-    background-image: url('../images/hero-bg.jpg'); 
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
