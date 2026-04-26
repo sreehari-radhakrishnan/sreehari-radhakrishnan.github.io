@@ -24,13 +24,20 @@ body, html {
 /* --- Branding Header (Top Left) --- */
 .landing-header {
     position: absolute;
-    top: 40px;
-    left: 5%;
+    top: 0;    /* Changed to 0 so the gradient touches the exact edge of the screen */
+    left: 0;   /* Changed to 0 */
+    padding: 40px 100px 100px 5%; /* Pushes the text back to its original position */
     z-index: 10;
+    
+    /* Creates a smooth, Midnight Blue shadow radiating from the top-left corner */
+    background: radial-gradient(circle at top left, rgba(13, 19, 26, 0.95) 0%, rgba(13, 19, 26, 0.6) 40%, transparent 80%);
+    pointer-events: none; /* Ensures the invisible part of the gradient doesn't block clicks */
 }
 
 .branding {
     color: var(--text-color);
+    /* Adds a subtle drop shadow to the text itself for an extra layer of protection */
+    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.8);
 }
 
 .branding .name {
