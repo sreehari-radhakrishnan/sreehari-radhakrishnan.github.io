@@ -26,28 +26,28 @@
         </div>
 
         <nav class="top-nav">
-            <a href="#about" class="nav-link">About</a>
-            <a href="https://instagram.com/{{site.instagram_username}}" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Instagram">
-                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="url(#ig-gradient)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <defs>
-                        <linearGradient id="ig-gradient" x1="0%" y1="100%" x2="100%" y2="0%">
-                            <stop offset="0%" stop-color="#f09433" />
-                            <stop offset="25%" stop-color="#e6683c" />
-                            <stop offset="50%" stop-color="#dc2743" />
-                            <stop offset="75%" stop-color="#cc2366" />
-                            <stop offset="100%" stop-color="#bc1888" />
-                        </linearGradient>
-                    </defs>
-                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-                </svg>
-            </a>
-        </nav>
+        <a href="#portfolio" class="nav-link">Works</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="https://instagram.com/hridhyaraveendran.p" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Instagram">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="url(#ig-gradient)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <defs>
+                    <linearGradient id="ig-gradient" x1="0%" y1="100%" x2="100%" y2="0%">
+                        <stop offset="0%" stop-color="#f09433" />
+                        <stop offset="25%" stop-color="#e6683c" />
+                        <stop offset="50%" stop-color="#dc2743" />
+                        <stop offset="75%" stop-color="#cc2366" />
+                        <stop offset="100%" stop-color="#bc1888" />
+                    </linearGradient>
+                </defs>
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+            </svg>
+        </a>
+    </nav>
     </header>
 
     <main id="portfolio" class="portfolio-section">
-        <h2>Selected Works</h2>
         <div class="video-grid">
             {% for work in site.data.works %}
             <div class="video-card" data-type="{{ work.video_type }}" data-id="{{ work.video_id }}">
@@ -80,7 +80,6 @@
     <section id="about" class="about-section">
         <div class="about-overlay"></div>
         <div class="about-content">
-            <h2>About Me</h2>
             <p>
               {{site.description}}
             </p>
