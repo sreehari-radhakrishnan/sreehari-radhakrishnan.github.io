@@ -62,6 +62,22 @@ body, html {
     top: 40px;
     right: 5%; 
     z-index: 10; 
+    display: flex;
+    align-items: center;
+    gap: 2rem; /* Adds clean spacing between text and icon */
+}
+
+.nav-link {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: var(--accent-color);
 }
 
 .social-link {
@@ -309,6 +325,49 @@ body, html {
         height: 40px;
         font-size: 1.8rem;
     }
+}
+
+/* --- About Section --- */
+.about-section {
+    position: relative;
+    min-height: 100vh; /* Forces it to be full screen */
+    display: flex;
+    align-items: center; /* Vertically centers the text */
+    background-image: url('../images/about-bg.jpg'); /* Make sure this image is in your folder! */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Creates a high-end parallax scroll effect */
+    padding: 100px 5%;
+}
+
+.about-overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    /* This gradient makes the left side Midnight Blue for text readability, 
+       and fades to totally transparent on the right so the photo shows */
+    background: linear-gradient(to right, rgba(13, 19, 26, 0.95) 0%, rgba(13, 19, 26, 0.7) 40%, transparent 100%);
+    z-index: 1;
+}
+
+.about-content {
+    position: relative;
+    z-index: 2;
+    max-width: 600px; /* Keeps the text contained to the left half of the screen */
+}
+
+.about-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-color);
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+.about-content p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
 }
 
 /* --- Contact Section --- */
