@@ -133,6 +133,29 @@
             setInterval(nextSlide, slideInterval);
         }
 
+        // --- Mobile Menu Logic ---
+        const hamburger = document.querySelector('.hamburger');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const closeMobileMenu = document.querySelector('.close-mobile-menu');
+        const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+        function toggleMobileMenu() {
+            mobileMenu.classList.toggle('active');
+            if (mobileMenu.classList.contains('active')) {
+                document.body.style.overflow = 'hidden'; // Prevent scrolling in background
+            } else {
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        hamburger.addEventListener('click', toggleMobileMenu);
+        closeMobileMenu.addEventListener('click', toggleMobileMenu);
+        
+        // Close menu automatically when a link is clicked
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', toggleMobileMenu);
+        });
+
         // Video Modal Logic
         const modal = document.getElementById('videoModal');
         const modalContainer = document.getElementById('modalVideoContainer');
