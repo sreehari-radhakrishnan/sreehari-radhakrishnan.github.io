@@ -370,97 +370,39 @@ body, html {
     margin-bottom: 1.5rem;
 }
 
-/* --- Contact Section --- */
-.contact-section {
-    padding: 100px 5%;
-    max-width: 800px;
-    margin: 0 auto;
+/* --- Footer Section --- */
+.site-footer {
+    padding: 60px 5%;
     text-align: center;
+    border-top: 1px solid var(--border-color); /* Subtle divider line */
+    background-color: var(--bg-color);
 }
 
-.contact-section h2 {
-    font-size: 2rem;
-    font-weight: 400;
-    margin-bottom: 1rem;
-    letter-spacing: 1px;
+.footer-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem; /* Clean spacing between email and phone */
+    flex-wrap: wrap;
 }
 
-.contact-section p {
+.footer-links a {
     color: var(--text-muted);
-    margin-bottom: 3rem;
-    font-size: 1.1rem;
-}
-
-.contact-form {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-}
-
-.contact-form input,
-.contact-form textarea {
-    width: 100%;
-    padding: 18px;
-    background-color: var(--surface-color); 
-    border: 1px solid var(--border-color);
-    color: var(--text-color);
-    font-family: 'Inter', sans-serif;
-    font-size: 1rem;
-    border-radius: 4px;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-.contact-form input:focus,
-.contact-form textarea:focus {
-    outline: none;
-    border-color: var(--accent-color); 
-    box-shadow: 0 0 0 2px rgba(217, 119, 54, 0.2); /* Soft amber glow */
-}
-
-.submit-btn {
-    background: var(--surface-color);
-    color: var(--text-color);
-    border: 1px solid var(--border-color);
-    padding: 15px 30px;
-    font-size: 1rem;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    margin-top: 1rem;
-    border-radius: 4px;
-}
-
-.submit-btn:hover {
-    background: var(--accent-color);
-    border-color: var(--accent-color);
-    color: #fff;
-    box-shadow: 0 4px 15px rgba(217, 119, 54, 0.3);
-}
-
-.direct-contact {
-    margin-top: 4rem;
-    padding-top: 2rem;
-    border-top: 1px solid var(--border-color);
-    display: flex;
-    flex-direction: column;
-    gap: 0.8rem; 
-    font-size: 1.1rem;
-}
-
-.direct-contact p {
-    margin-bottom: 0; 
-}
-
-.direct-contact a {
-    color: var(--text-color);
     text-decoration: none;
-    border-bottom: 1px solid transparent;
-    transition: color 0.3s ease, border-bottom 0.3s ease;
-    margin-left: 0.5rem;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 
-.direct-contact a:hover {
+.footer-links a:hover {
     color: var(--accent-color);
-    border-bottom: 1px solid var(--accent-color);
+    transform: translateY(-2px); /* Slight lift effect on hover */
+}
+
+/* On very small mobile screens, stack the email and phone */
+@media (max-width: 600px) {
+    .footer-links {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
 }
