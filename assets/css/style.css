@@ -125,27 +125,23 @@ body, html {
 
 .close-mobile-menu {
     position: absolute;
-    /* Adjusted top and right slightly to keep the visual "X" exactly where it was, 
-       while making room for the new invisible padding boundary */
     top: 20px; 
     right: 2%; 
-    background: none;
+    background: transparent;
     border: none;
-    color: var(--text-color);
-    font-size: 3rem;
-    line-height: 1;
+    color: var(--text-color); /* This passes your off-white color to the SVG */
     cursor: pointer;
     transition: color 0.3s ease;
     z-index: 9999;
     
-    /* FIX: Expanding the invisible touch area */
-    padding: 20px; 
+    /* FIX: Corrected Hitbox Math */
     width: 60px;
     height: 60px;
+    padding: 10px; /* Gives the 36px SVG exact room to breathe */
     display: flex;
     align-items: center;
     justify-content: center;
-    -webkit-tap-highlight-color: transparent; /* Removes the ugly blue tap-flash on iPhones */
+    -webkit-tap-highlight-color: transparent; 
 }
 
 .close-mobile-menu:hover {
