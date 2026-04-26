@@ -531,12 +531,25 @@ body, html {
         display: block;
     }
 
- /* Mobile About & Contact Layout */
+    /* Forces the Instagram icon above the email/phone */
+    .about-contact .social-link {
+        order: -1; 
+        margin-bottom: 2.5rem;
+        transform: scale(1.2); /* Makes it slightly larger and easier to tap */
+    }
+    /* --- Mobile About & Contact Layout --- */
     .about-section {
+        flex-direction: column; 
         align-items: flex-start; 
-        padding-top: 150px; 
+        padding-top: 100px;      /* Breathing room for the top nav */
+        padding-bottom: 40px;    /* Keeps contacts slightly off the bottom edge */
         background-position: right center !important; 
-        flex-direction: column; /* FIX: Forces contact info to drop BELOW the text */
+    }
+
+    /* This completely centers the text block vertically */
+    .about-content {
+        margin-top: auto;
+        margin-bottom: auto; 
     }
 
     .about-contact {
@@ -544,17 +557,17 @@ body, html {
         bottom: auto;
         left: 0;
         right: 0;
-        width: 100%; /* Takes full width of the screen */
+        width: 100%; 
         flex-direction: column;
-        align-items: center; /* Centers the Instagram icon */
-        margin-top: 4rem; 
+        align-items: flex-end;   /* Pushes the Instagram icon to the right corner */
+        margin-top: 0; 
     }
 
-    /* Forces the Instagram icon above the email/phone */
+    /* Positions the Instagram icon above the text links */
     .about-contact .social-link {
         order: -1; 
-        margin-bottom: 2.5rem;
-        transform: scale(1.2); /* Makes it slightly larger and easier to tap */
+        margin-bottom: 2rem;     /* One line of space above phone/email */
+        transform: scale(1.1); 
     }
 
     /* Pushes email and phone to opposite edges */
@@ -563,6 +576,11 @@ body, html {
         justify-content: space-between;
         width: 100%;
         gap: 0;
+    }
+
+    .contact-info a {
+        font-size: 0.85rem; 
+        letter-spacing: 0.5px;
     }
 
     /* Shrinks text to prevent overlap on narrow screens */
