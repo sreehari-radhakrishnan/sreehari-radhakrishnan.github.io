@@ -526,53 +526,56 @@ body, html {
     .hamburger {
         display: block;
     }
-
-    /* Forces the Instagram icon above the email/phone */
-    .about-contact .social-link {
-        order: -1; 
-        margin-bottom: 2.5rem;
-        transform: scale(1.2); /* Makes it slightly larger and easier to tap */
-    }
     /* --- Mobile About & Contact Layout --- */
     .about-section {
+        position: relative; /* Required to lock the absolute contact box to the bottom */
+        min-height: 100vh;
         flex-direction: column; 
         align-items: flex-start; 
-        padding-top: 100px;      /* Breathing room for the top nav */
-        padding-bottom: 40px;    /* Keeps contacts slightly off the bottom edge */
+        padding-top: 100px;      
+        padding-bottom: 120px; /* Crucial: Prevents the centered text from overlapping the bottom links */
         background-position: right center !important; 
     }
 
-    /* This completely centers the text block vertically */
+    /* Flawlessly centers the text vertically in the remaining space */
     .about-content {
         margin-top: auto;
         margin-bottom: auto; 
     }
 
+    /* Locks to the absolute bottom of the screen */
     .about-contact {
-        position: relative; 
-        bottom: auto;
-        left: 0;
-        right: 0;
-        width: 100%; 
-        flex-direction: column;
-        align-items: flex-end;   /* Pushes the Instagram icon to the right corner */
+        position: absolute; 
+        bottom: 30px;
+        left: 5%;
+        right: 5%;
+        width: 90%; 
+        flex-direction: row; /* Places text on the left, icon on the right */
+        justify-content: space-between; 
+        align-items: flex-end;
         margin-top: 0; 
     }
 
-    /* Positions the Instagram icon above the text links */
+    /* Clears previous mobile overrides so it aligns perfectly */
     .about-contact .social-link {
-        order: -1; 
-        margin-bottom: 2rem;     /* One line of space above phone/email */
+        order: 0; 
+        margin-bottom: 0;     
         transform: scale(1.1); 
     }
 
-    /* Pushes email and phone to opposite edges */
+    /* Stacks email and phone cleanly on the left to prevent horizontal crashing */
     .contact-info {
-        flex-direction: row;
-        justify-content: space-between;
-        width: 100%;
-        gap: 0;
+        flex-direction: column;
+        align-items: flex-start;
+        width: auto;
+        gap: 0.5rem; /* Tight, readable spacing */
     }
+
+    .contact-info a {
+        font-size: 0.9rem; 
+        letter-spacing: 0.5px;
+    }
+
 
     .contact-info a {
         font-size: 0.85rem; 
