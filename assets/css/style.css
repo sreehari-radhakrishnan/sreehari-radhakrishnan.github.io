@@ -123,40 +123,42 @@ body, html {
     visibility: visible;
 }
 
-/* --- Bulletproof Mobile Close Button --- */
+/* --- Solid Circular Mobile Close Button --- */
 .close-mobile-menu {
-    position: absolute;
-    top: 15px; 
-    right: 15px; /* Switched from percentages to hard pixels for stability */
-    background: transparent !important;
-    border: none !important;
-    z-index: 99999; /* Maxed out Z-index */
+    position: fixed; /* Fixed ensures it stays locked to the screen edge */
+    top: 20px;
+    right: 20px;
+    width: 45px;
+    height: 45px;
     
-    /* Strips all hidden Apple/Android OS button styles */
-    -webkit-appearance: none;
-    appearance: none;
-    outline: none;
-    box-shadow: none;
+    /* Matches the Video Modal's solid styling */
+    background: var(--surface-color); 
+    border: 2px solid var(--border-color);
+    border-radius: 50%; 
+    color: var(--text-color);
     
-    /* Perfect Hitbox Math */
-    width: 60px;
-    height: 60px;
+    font-size: 2rem;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    -webkit-tap-highlight-color: transparent; 
+    line-height: 0; /* Crucial for centering the &times; character */
+    transition: all 0.3s ease;
+    z-index: 99999; 
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    
+    /* Strips any hidden Apple/Android styles */
+    -webkit-appearance: none;
+    appearance: none;
+    outline: none;
 }
 
-/* Forces the SVG to never collapse */
-.close-mobile-menu svg {
-    display: block;
-    transition: transform 0.3s ease, opacity 0.3s ease;
-}
-
-.close-mobile-menu:hover svg {
+.close-mobile-menu:hover {
+    background: var(--accent-color);
+    color: #fff;
+    border-color: var(--accent-color);
     transform: scale(1.1);
-    opacity: 0.8;
+    box-shadow: 0 4px 20px rgba(217, 119, 54, 0.4);
 }
 
 .mobile-menu-links {
