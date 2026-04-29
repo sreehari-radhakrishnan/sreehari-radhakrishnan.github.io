@@ -10,6 +10,24 @@
   video_id: "qgYK8hOTtQY"
   thumbnail: "assets/images/bilwe.jpg"
 
+- title: "BlinkIt | India's last minute app"
+  description: "Spec Ad"
+  video_type: "youtube"
+  video_id: "hdIujIOtYCI"
+  thumbnail: "assets/images/blinkit.png"
+
+- title: "Order safe on Zomato!"
+  description: "Spec Ad"
+  video_type: "youtube"
+  video_id: "kCQ_yyK12oY"
+  thumbnail: "assets/images/zomato.png"
+
+- title: "Amazon Alexa"
+  description: "Spec Ad"
+  video_type: "vimeo"
+  video_id: "1187640339"
+  thumbnail: "assets/images/alexa.png"
+
 - title: "Dine Kharabele"
   description: "Shortfilm | Odia"
   video_type: "youtube"
