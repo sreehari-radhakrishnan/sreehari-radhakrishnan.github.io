@@ -20,7 +20,7 @@
   description: "Spec Ad"
   video_type: "youtube"
   video_id: "kCQ_yyK12oY"
-  thumbnail: "assets/images/zomato.png"
+  thumbnail: "assets/images/zomato1.png"
 
 - title: "Amazon Alexa"
   description: "Spec Ad"
@@ -39,6 +39,18 @@
   video_type: "youtube"
   video_id: "fLdtErsmBjg" 
   thumbnail: "assets/images/yayati kadha.png"
+
+- title: "A Heartbeat | Shortfilm | Bengali"
+  description: "Official selection at the Tasveer Film Festival"
+  video_type: "youtube"
+  video_id: "oCb3K_Y9Q0w"
+  thumbnail: "assets/images/heartbeat.png"
+
+- title: "A Shortfilm About Change"
+  description: "Shortfilm | Hindi"
+  video_type: "gdrive"
+  video_id: "1wCpXENUXudN6TLjFJWzlL9SlKtjWyvAP"
+  thumbnail: "assets/images/change.png"
 
 - title: "Jag Darshan Ka Mela | Murshidabadi | Kaushik-Guddu"
   description: "Music video | Oriyon Music By Arijit Singh"
