@@ -207,8 +207,6 @@ body, html {
     width: 100%;
     overflow: hidden;
     background-color: #000; /* Fallback color */
-    /* Tells the browser to load the horizontal desktop image by default */
-    background-image: var(--desktop-bg);
 }
 
 .carousel-slide {
@@ -221,6 +219,8 @@ body, html {
     background-position: center;
     opacity: 0;
     transition: opacity 1.5s ease-in-out; /* Smooth crossfade */
+    /* Tells the browser to load the horizontal desktop image by default */
+    background-image: var(--desktop-bg);
 }
 
 /* Black and White Filter */
@@ -553,7 +553,7 @@ body, html {
         display: block;
     }
     /* --- Mobile Landing Layout --- */
-    .hero {
+    .carousel-slide {
         /* Overrides the desktop image and forces the vertical mobile image to load */
         background-image: var(--mobile-bg) !important; 
         
