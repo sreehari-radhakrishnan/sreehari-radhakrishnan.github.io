@@ -207,6 +207,8 @@ body, html {
     width: 100%;
     overflow: hidden;
     background-color: #000; /* Fallback color */
+    /* Tells the browser to load the horizontal desktop image by default */
+    background-image: var(--desktop-bg);
 }
 
 .carousel-slide {
@@ -549,6 +551,14 @@ body, html {
     }
     .hamburger {
         display: block;
+    }
+    /* --- Mobile Landing Layout --- */
+    .hero {
+        /* Overrides the desktop image and forces the vertical mobile image to load */
+        background-image: var(--mobile-bg) !important; 
+        
+        /* Keeps your dedicated vertical image perfectly centered */
+        background-position: center !important; 
     }
     /* --- Mobile About & Contact Layout --- */
     .about-section {
