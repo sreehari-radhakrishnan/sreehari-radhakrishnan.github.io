@@ -73,6 +73,13 @@ body, html {
     display: block;
 }
 
+/* Groups the social icons side-by-side */
+.social-icons {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem; /* Clean spacing between Instagram and Behance */
+}
+
 /* --- Responsive Hero Section / B&W Carousel --- */
 .hero {
     position: relative;
@@ -301,6 +308,15 @@ body, html {
         width: 40px;
         height: 40px;
         font-size: 1.8rem;
+    }
+    /* Keeps both icons grouped properly on the right side for mobile */
+    .about-contact .social-icons {
+        display: flex;
+        gap: 1.2rem;
+        order: 0; 
+        margin-bottom: 0;     
+        transform: scale(1.1); 
+        transform-origin: bottom right; /* Ensures scaling doesn't push them off the screen */
     }
 }
 
