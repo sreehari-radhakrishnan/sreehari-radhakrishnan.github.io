@@ -524,6 +524,13 @@ body, html {
     transform: translateY(-2px);
 }
 
+/* Groups the social icons side-by-side */
+.social-icons {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem; /* Clean spacing between Instagram and Behance */
+}
+
 .social-link {
     transition: transform 0.3s ease, opacity 0.3s ease;
     opacity: 0.9;
@@ -577,11 +584,14 @@ body, html {
         margin-top: 0; 
     }
 
-    /* Clears previous mobile overrides so it aligns perfectly */
-    .about-contact .social-link {
+    /* Keeps both icons grouped properly on the right side for mobile */
+    .about-contact .social-icons {
+        display: flex;
+        gap: 1.2rem;
         order: 0; 
         margin-bottom: 0;     
         transform: scale(1.1); 
+        transform-origin: bottom right; /* Ensures scaling doesn't push them off the screen */
     }
 
     /* Stacks email and phone cleanly on the left to prevent horizontal crashing */
@@ -608,4 +618,5 @@ body, html {
         font-size: 0.85rem; 
         letter-spacing: 0.5px;
     }
+    
 }
