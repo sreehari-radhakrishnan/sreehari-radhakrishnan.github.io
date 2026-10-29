@@ -22,23 +22,17 @@
   video_id: "1197663096"
   thumbnail: "assets/images/zomato1.png"
 
-- title: "Amazon Alexa"
-  description: "Spec Ad | Cinematographer | Director"
-  video_type: "vimeo"
-  video_id: "1198500771"
-  thumbnail: "assets/images/alexa.png"
-
 - title: "Dine Kharabele"
   description: "Shortfilm | Odia | Cinematographer"
   video_type: "youtube"
   video_id: "BRFKd8oYx_0"
   thumbnail: "assets/images/dine kharebele.jpg"
 
-- title: "Yayati Katha"
-  description: "Shortfilm | Hindi | Cinematographer | Official Selection - 2024 Bangalore International Film Festival"
-  video_type: "youtube"
-  video_id: "fLdtErsmBjg" 
-  thumbnail: "assets/images/yayati kadha.png"
+- title: "Amazon Alexa"
+  description: "Spec Ad | Cinematographer | Director"
+  video_type: "vimeo"
+  video_id: "1198500771"
+  thumbnail: "assets/images/alexa.png"
 
 - title: "A Heartbeat | Shortfilm | Bengali"
   description: "Cinematographer | Official selection at the Tasveer Film Festival"
@@ -51,6 +45,17 @@
   video_type: "gdrive"
   video_id: "1wCpXENUXudN6TLjFJWzlL9SlKtjWyvAP"
   thumbnail: "assets/images/change.png"
+
+- title: "Thadiyante Janeman"
+  description: "Shortfilm | Malayalam | Cinematographer"
+  video_type: "youtube"
+  video_id: "Ck6iJ6yWZXQ"
+
+- title: "Yayati Katha"
+  description: "Shortfilm | Hindi | Cinematographer | Official Selection - 2024 Bangalore International Film Festival"
+  video_type: "youtube"
+  video_id: "fLdtErsmBjg" 
+  thumbnail: "assets/images/yayati kadha.png"
 
 - title: "Jag Darshan Ka Mela | Murshidabadi | Kaushik-Guddu"
   description: "Music video | Oriyon Music By Arijit Singh | Cinematographer"
